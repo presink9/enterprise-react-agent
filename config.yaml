@@ -1,0 +1,7 @@
+server:
+  host: 0.0.0.0
+  port: 8081
+
+pypi:
+  # 相关规则可参考官方模板中的 docker-blob 或 pypi 部分
+  enabled: true
