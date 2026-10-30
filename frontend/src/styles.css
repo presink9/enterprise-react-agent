@@ -1,0 +1,149 @@
+/* App foundation adapted from Taste Skill's app.css; Framed sheet, seed 20261029. */
+:root {
+    font-family: 'IBM Plex Sans', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+    color: var(--text);
+    background: var(--ground);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Calm blue surfaces; semantic roles stay independent of the brand. */
+    --ground: #edf3fa;
+    --surface: #fefefe;
+    --raised: #f0f5fc;
+    --active: #e0eaf7;
+    --border: #dbe4ef;
+    --rule: #eaf0f6;
+    --control: #7c8fa9;
+    --text: #1e304b;
+    --body-ink: #31435e;
+    --muted: #546781;
+    --accent: #365f91;
+    --accent-hover: #2d507b;
+    --accent-pressed: #24436a;
+    --on-accent: #ffffff;
+    --positive: #2d715c;
+    --negative: #ab4146;
+    --warning: #855d32;
+    --warning-surface: #fdf8f0;
+    --warning-border: #e8d9c2;
+    --warm-surface: #f1ece5;
+    --warm-ink: #6b5b49;
+    --disabled-surface: #e9eef5;
+    --disabled-ink: #536680;
+    --edge-light: rgb(255 255 255 / 86%);
+    --focus-halo: rgb(54 95 145 / 16%);
+    --shadow-sheet: 0 4px 20px rgb(38 65 104 / 4%), 0 1px 3px rgb(38 65 104 / 3%);
+    --shadow-card: 0 2px 8px rgb(38 65 104 / 4%), inset 0 1px 0 var(--edge-light);
+    --shadow-inset: inset 0 1px 3px rgb(38 65 104 / 5%), inset 0 -1px 0 var(--edge-light);
+    --ease-ui: cubic-bezier(0.2, 0, 0, 1);
+    --duration-ui: 160ms;
+    --radius-card: 8px;
+    --radius-control: 6px;
+    --radius-sheet: 16px;
+    --sidebar-width: 228px;
+    --gap: 24px;
+    --pad: 24px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-width: 320px;
+}
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+button {
+    cursor: pointer;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+button,
+a,
+input,
+textarea,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+button {
+    background: none;
+    border: 0;
+}
+button,
+a {
+    touch-action: manipulation;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    border-radius: var(--radius-control);
+    outline-offset: 3px;
+}
+button {
+    transition:
+        color var(--duration-ui) var(--ease-ui),
+        border-color var(--duration-ui) var(--ease-ui),
+        background-color var(--duration-ui) var(--ease-ui),
+        box-shadow var(--duration-ui) var(--ease-ui);
+}
+input,
+textarea {
+    min-width: 0;
+}
+svg {
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+.lucide {
+    stroke-width: 1.7;
+}
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+a {
+    color: var(--accent);
+}
+::selection {
+    background: var(--active);
+}
+::placeholder {
+    color: var(--muted);
+    opacity: 1;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

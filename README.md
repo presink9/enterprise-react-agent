@@ -28,6 +28,21 @@ ReAct 使用结构化工具调用：模型决定行动，工具结果以 ToolMes
 
 ## 本地运行
 
+### React 界面原型
+
+项目新增独立的 React 工作台，展示聊天、引用资料、检索进度和超时重试。
+当前为**演示模式**，无需模型或数据库，回答来自本地场景脚本。
+
+```powershell
+cd frontend
+npm ci
+npm run dev
+```
+
+访问 [本地界面](http://localhost:5173)。需要 Node.js 22.12+，详细说明见 [前端 README](frontend/README.md)。
+
+### Python 后端
+
 Python 3.12+；在项目根目录执行：
 
 ```powershell
