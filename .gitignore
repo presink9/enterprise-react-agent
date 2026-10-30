@@ -14,3 +14,8 @@ data/docs/*
 build/
 dist/
 .vscode/
+node_modules/
+.taste-skill/
+frontend/playwright-report/
+frontend/test-results/
+*.tsbuildinfo
