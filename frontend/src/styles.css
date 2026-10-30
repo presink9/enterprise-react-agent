@@ -1,25 +1,43 @@
 /* App foundation adapted from Taste Skill's app.css; Framed sheet, seed 20261029. */
 :root {
     font-family: 'IBM Plex Sans', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
-    color: #131416;
-    background: #f3f6f7;
+    color: var(--text);
+    background: var(--ground);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    --ground: #f3f6f7;
-    --surface: #fff;
-    --raised: #f4f6f8;
-    --active: #e7edef;
-    --border: #e8eaec;
-    --rule: #f0f1f2;
-    --control: #cdced1;
-    --text: #131416;
-    --muted: #5d5f60;
-    --accent: #1b6c80;
-    --positive: #1e7b4f;
-    --negative: #c4242a;
-    --warning: #92400e;
+    /* Calm blue surfaces; semantic roles stay independent of the brand. */
+    --ground: #edf3fa;
+    --surface: #fefefe;
+    --raised: #f0f5fc;
+    --active: #e0eaf7;
+    --border: #dbe4ef;
+    --rule: #eaf0f6;
+    --control: #7c8fa9;
+    --text: #1e304b;
+    --body-ink: #31435e;
+    --muted: #546781;
+    --accent: #365f91;
+    --accent-hover: #2d507b;
+    --accent-pressed: #24436a;
+    --on-accent: #ffffff;
+    --positive: #2d715c;
+    --negative: #ab4146;
+    --warning: #855d32;
+    --warning-surface: #fdf8f0;
+    --warning-border: #e8d9c2;
+    --warm-surface: #f1ece5;
+    --warm-ink: #6b5b49;
+    --disabled-surface: #e9eef5;
+    --disabled-ink: #536680;
+    --edge-light: rgb(255 255 255 / 86%);
+    --focus-halo: rgb(54 95 145 / 16%);
+    --shadow-sheet: 0 4px 20px rgb(38 65 104 / 4%), 0 1px 3px rgb(38 65 104 / 3%);
+    --shadow-card: 0 2px 8px rgb(38 65 104 / 4%), inset 0 1px 0 var(--edge-light);
+    --shadow-inset: inset 0 1px 3px rgb(38 65 104 / 5%), inset 0 -1px 0 var(--edge-light);
+    --ease-ui: cubic-bezier(0.2, 0, 0, 1);
+    --duration-ui: 160ms;
     --radius-card: 8px;
     --radius-control: 6px;
     --radius-sheet: 16px;
@@ -72,13 +90,15 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
     outline: 2px solid var(--accent);
+    border-radius: var(--radius-control);
     outline-offset: 3px;
 }
 button {
     transition:
-        color 140ms ease,
-        border-color 140ms ease,
-        background-color 140ms ease;
+        color var(--duration-ui) var(--ease-ui),
+        border-color var(--duration-ui) var(--ease-ui),
+        background-color var(--duration-ui) var(--ease-ui),
+        box-shadow var(--duration-ui) var(--ease-ui);
 }
 input,
 textarea {
@@ -87,6 +107,9 @@ textarea {
 svg {
     flex-shrink: 0;
     vertical-align: middle;
+}
+.lucide {
+    stroke-width: 1.7;
 }
 h1,
 h2,
@@ -98,10 +121,10 @@ a {
     color: var(--accent);
 }
 ::selection {
-    background: #dcecf0;
+    background: var(--active);
 }
 ::placeholder {
-    color: #6b7376;
+    color: var(--muted);
     opacity: 1;
 }
 .sr-only {
